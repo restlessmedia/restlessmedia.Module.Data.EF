@@ -76,7 +76,9 @@
   <ItemGroup>
     <Compile Include="DatabaseConfiguration.cs" />
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="EntityConfiguration.cs" />
     <Compile Include="EntityRepository.cs" />
+    <Compile Include="LicensedEntityConfiguration.cs" />
     <Compile Include="LicensedEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecordNotFoundException.cs" />
