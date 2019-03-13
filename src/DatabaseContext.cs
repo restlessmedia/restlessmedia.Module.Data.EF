@@ -82,15 +82,15 @@ namespace restlessmedia.Module.Data.EF
       return base.SaveChanges();
     }
 
-    private readonly IDataContext _dataContext;
-
-    private static void Configure(DbModelBuilder modelBuilder)
+    protected virtual void Configure(DbModelBuilder modelBuilder)
     {
       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
       modelBuilder.Entity<TLicense>();
       modelBuilder.Entity<TEntity>();
     }
+
+    private readonly IDataContext _dataContext;
 
     private static DbConnection CreateConnection(IDataContext dataContext)
     {

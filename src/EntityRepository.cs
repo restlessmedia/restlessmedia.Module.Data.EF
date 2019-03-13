@@ -17,7 +17,7 @@ namespace restlessmedia.Module.Data.EF
       : base(context)
     { }
 
-    public void Update(Module.IEntity entity, DateTime? updatedDate)
+    public void Update(IEntity entity, DateTime? updatedDate)
     {
       TEntity existingEntity = Context.Entity.Where(x => x.EntityType == entity.EntityType && x.EntityId == entity.EntityId).FirstOrDefault();
 

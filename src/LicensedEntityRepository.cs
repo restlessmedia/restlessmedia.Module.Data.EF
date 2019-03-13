@@ -6,8 +6,7 @@ namespace restlessmedia.Module.Data.EF
     where T : LicensedEntity
   {
     public LicensedEntityRepository(DatabaseContext context)
-      : base(context)
-    { }
+      : base(context) { }
 
     protected IQueryable<T> Licensed()
     {

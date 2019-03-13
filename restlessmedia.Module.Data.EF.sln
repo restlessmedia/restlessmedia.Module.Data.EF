@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restlessmedia.Module.Data.EF", "src\restlessmedia.Module.Data.EF.csproj", "{40C0AFB7-2409-47E5-8E96-9F7BBF3DDC59}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5DE85180-89B9-4178-ABCD-5D3F47F4F28A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,7 +28,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = ommon.6.0.1304.0\lib\NET45;ransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
 		SolutionGuid = {5F4FCCEC-5070-4247-99BC-17F584A58CDB}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = ommon.6.0.1304.0\lib\NET45;ransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
 	EndGlobalSection
 EndGlobal
