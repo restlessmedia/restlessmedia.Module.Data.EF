@@ -5,6 +5,21 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace restlessmedia.Module.Data.EF
 {
+  public class DatabaseContext<T> : DatabaseContext
+    where T : class
+  {
+    public DatabaseContext(IDataContext dataContext, bool autoDetectChanges = false)
+      : base(dataContext, autoDetectChanges) { }
+
+    public DbSet<T> Data
+    {
+      get
+      {
+        return Set<T>();
+      }
+    }
+  }
+
   public class DatabaseContext : DbContext
   {
     static DatabaseContext()
@@ -43,19 +58,13 @@ namespace restlessmedia.Module.Data.EF
         return Set<TLicense>();
       }
     }
-    
+
     public int LicenseId
     {
       get
       {
         return LicenseHelper.GetLicenseId(_connection, _dataContext.LicenseSettings.LicenseKey);
       }
-    }
-
-    public T Repository<T>()
-      where T : Repository
-    {
-      return (T)typeof(T).GetConstructor(new[] { typeof(DatabaseContext) }).Invoke(new[] { this });
     }
 
     protected override void Dispose(bool disposing)
@@ -103,7 +112,7 @@ namespace restlessmedia.Module.Data.EF
 
       if (connection == null)
       {
-        throw new InvalidOperationException($"The connection returned from CreateConnection is null or not a {nameof(DbConnection)}");
+        throw new InvalidOperationException($"The connection returned from CreateConnection is null or not a {nameof(DbConnection)}.");
       }
 
       return connection;
