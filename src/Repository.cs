@@ -10,6 +10,17 @@ namespace restlessmedia.Module.Data.EF
   {
     public Repository(DatabaseContext context)
       : base(context) { }
+  }
+
+  public abstract class Repository<T, TDatabaseContext> : Repository
+    where T : class
+    where TDatabaseContext : DatabaseContext
+  {
+    public Repository(TDatabaseContext context)
+      : base(context)
+    {
+      Context = context ?? throw new ArgumentNullException("context");
+    }
 
     public virtual int Count()
     {
@@ -39,17 +50,6 @@ namespace restlessmedia.Module.Data.EF
     protected DbSet<T> Set()
     {
       return Context.Set<T>();
-    }
-  }
-
-  public abstract class Repository<T, TDatabaseContext> : Repository
-    where T : class
-    where TDatabaseContext : DatabaseContext
-  {
-    public Repository(TDatabaseContext context)
-      : base(context)
-    {
-      Context = context ?? throw new ArgumentNullException("context");
     }
 
     protected new readonly TDatabaseContext Context;
