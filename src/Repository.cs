@@ -5,12 +5,11 @@ using System.Linq.Expressions;
 
 namespace restlessmedia.Module.Data.EF
 {
-  public abstract class Repository<T> : Repository
+  public abstract class Repository<T> : Repository<T, DatabaseContext>
     where T : class
   {
     public Repository(DatabaseContext context)
-      : base(context)
-    { }
+      : base(context) { }
 
     public virtual int Count()
     {
@@ -39,8 +38,21 @@ namespace restlessmedia.Module.Data.EF
 
     protected DbSet<T> Set()
     {
-        return Context.Set<T>();
+      return Context.Set<T>();
     }
+  }
+
+  public abstract class Repository<T, TDatabaseContext> : Repository
+    where T : class
+    where TDatabaseContext : DatabaseContext
+  {
+    public Repository(TDatabaseContext context)
+      : base(context)
+    {
+      Context = context ?? throw new ArgumentNullException("context");
+    }
+
+    protected new readonly TDatabaseContext Context;
   }
 
   public abstract class Repository
