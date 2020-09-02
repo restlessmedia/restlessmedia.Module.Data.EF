@@ -5,9 +5,9 @@
     <Product>restlessmedia.Module.Data.EF</Product>
     <Description>Module EF (data) library.</Description>
     <Copyright>Copyright restlessmedia 2019</Copyright>
-    <Version>2.0.0</Version>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
-    <FileVersion>2.0.0</FileVersion>
+    <Version>2.1.0</Version>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <FileVersion>2.1.0</FileVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <Authors>Phil Cooper</Authors>
     <PackageId>restlessmedia.Module.Data.EF</PackageId>
@@ -32,7 +32,7 @@
     <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="EnterpriseLibrary.Common" Version="6.0.1304.0" />
     <PackageReference Include="EnterpriseLibrary.TransientFaultHandling" Version="6.0.1304.0" />
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FastMember" Version="1.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="restlessmedia.Module" Version="4.1.5" />
@@ -48,5 +48,6 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 </Project>
+
 
 
