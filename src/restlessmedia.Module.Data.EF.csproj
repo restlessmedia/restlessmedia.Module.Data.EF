@@ -5,7 +5,7 @@
     <Product>restlessmedia.Module.Data.EF</Product>
     <Description>Module EF (data) library.</Description>
     <Copyright>Copyright restlessmedia 2019</Copyright>
-    <Version>2.1.0</Version>
+    <Version>2.2.0</Version>
     <AssemblyVersion>2.1.0</AssemblyVersion>
     <FileVersion>2.1.0</FileVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -35,7 +35,7 @@
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FastMember" Version="1.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="restlessmedia.Module" Version="4.1.5" />
+    <PackageReference Include="restlessmedia.Module" Version="7.0.3" />
     <PackageReference Include="SqlBuilder" Version="1.16.3" />
     <PackageReference Include="SqlBuilder.DataServices" Version="2.0.0" />
     <PackageReference Include="StackExchange.Redis.StrongName" Version="1.2.6" />
